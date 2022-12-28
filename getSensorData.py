@@ -15,7 +15,7 @@ for i in range(1000):
     flt = float(string)        # convert string to float
     print(flt,i)
     data.append(flt)           # add to the end of data list
-    time.sleep(0.01)            # wait (sleep) 0.1 seconds
+    time.sleep(0.01)            # esperar (dormir) 0,1 segundos
 
 ser.close()
 

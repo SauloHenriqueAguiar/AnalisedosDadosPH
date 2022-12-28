@@ -47,7 +47,7 @@ class Model():
 		timer.start()
 		print('[Model] Treinamento iniciado')
 		print('[Model] %s epochs, %s batch size' % (epochs, batch_size))
-		
+		#salva modelo na pasta saved_models
 		save_fname = os.path.join(save_dir, '%s-e%s.h5' % (dt.datetime.now().strftime('%d%m%Y-%H%M%S'), str(epochs)))
 		callbacks = [
 			EarlyStopping(monitor='val_loss', patience=2),
@@ -60,8 +60,12 @@ class Model():
 			batch_size=batch_size,
 			callbacks=callbacks
 		)
+		# salva o modelo	
 		self.model.save(save_fname)
-
+  
+		#remove o arquivo ant
+		#os.remove('saved_models\28122022-151358-e1.h5')
+		os.remove(save_fname)
 		print('[Model] Treinamento Concluído. Modelo salvo como %s' % save_fname)
 		timer.stop()
 
@@ -70,7 +74,7 @@ class Model():
 		timer.start()
 		print('[Model] Treinamento iniciado')
 		print('[Model] %s epochs, %s batch size, %s batches per epoch' % (epochs, batch_size, steps_per_epoch))
-		
+		  #salva modelo na pasta saved_models
 		save_fname = os.path.join(save_dir, '%s-e%s.h5' % (dt.datetime.now().strftime('%d%m%Y-%H%M%S'), str(epochs)))
 		callbacks = [
 			ModelCheckpoint(filepath=save_fname, monitor='loss', save_best_only=True)

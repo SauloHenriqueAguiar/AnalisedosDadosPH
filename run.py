@@ -69,9 +69,9 @@ def main():
 
         plot_results(predictions_data[-120:],sensor_data[-100:])
         plt.show()
-        plt.pause(0.1) #critical to display continous img  
+        plt.pause(1) #critical to display continous img  
 
-        #predict every 10 seq_len
+        #prever a cada 10 seq_len
         #if len(sensor_data) > 1 * seq_len[0]:
 
         #treine a cada 100 seq_len
@@ -89,6 +89,8 @@ def main():
                 seq_len=configs['data']['sequence_length'],
                 normalise=configs['data']['normalise']
                 )
+
+                
         # treinamento em memória
             model.train(
                 x,
