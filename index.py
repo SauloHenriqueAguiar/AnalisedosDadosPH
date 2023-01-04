@@ -1,13 +1,13 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+#import dash_core_components as dcc
+#import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 from dash.exceptions import PreventUpdate
 import pandas as pd
 import sqlalchemy
 from datetime import datetime
-
+from dash import Dash, html, dcc
 
 app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}])
 
